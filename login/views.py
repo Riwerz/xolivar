@@ -21,12 +21,10 @@ def log_in(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(data=request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save(commit=False)
-            user.is_active = False
-            user.save()
-            return redirect('/')
+            form.save()
+            return redirect('/login')
     else:
         form = UserCreationForm()
     return render(request, 'login/RegistrationForm.html', context={'form': form})
