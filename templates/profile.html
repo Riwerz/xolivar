@@ -1,0 +1,13 @@
+<div class="col-3 text-center">
+    <div class="card bg-light" style="width: 15vw;position: fixed">
+        <img src="https://pbs.twimg.com/profile_images/977262343238422529/yjs_GO3g.jpg" class="card-img-top rounded" alt="...">
+        <div class="card-body">
+            <h5 class="card-title font-weight-bold font-italic">{{ user.username }}</h5>
+            <div class="card-text">
+                <p class="text-danger">Администратор</p>
+                <p>Статус: Потерялся</p>
+            </div>
+            <a href="{% url 'logout' %}" class="btn btn-primary">Выйти</a>
+        </div>
+    </div>
+</div>

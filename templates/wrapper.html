@@ -1,6 +1,6 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Холивар!</title>
@@ -9,12 +9,14 @@
 </head>
 <body>
     {% include 'navbar.html' %}
-    {% block content %}
-    {% endblock %}
-    <footer class="text-center text-light bg-dark">
-        <a class="h5" href="about">О проекте</a><br/>
-        <small> © 2019 - All Rights Reserved </small>
-    </footer>
+    <div class="d-flex justify-content-start">
+        {% if user.is_authenticated %}
+            {% include 'profile.html' %}
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
     <script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
     <script src="{% static "js/popper.min.js" %}"></script>
     <script src="{% static "js/bootstrap.min.js" %}"></script>
